@@ -16,6 +16,8 @@ public interface UserService extends GenericService<User> {
 
     List<MovieList> findMovieLists(Long id);
 
+//    List<MovieList> findMovieListsByIdAndType(Long id, String type);
+
     User findUserByUsername(String username);
 
     boolean registerUser(User user);

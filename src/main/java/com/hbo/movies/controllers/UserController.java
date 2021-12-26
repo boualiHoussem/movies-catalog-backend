@@ -53,4 +53,10 @@ public class UserController {
                 this.userService.findMovieLists(id)
         );
     }
+
+//    @GetMapping("/{id}/list/{type}")
+//    public ResponseEntity<List<MovieList>> getMovieListByType(@PathVariable("id") Long id,
+//                                                              @PathVariable("type") String type) {
+//        return ResponseEntity.status(HttpStatus.OK).body(this.userService.findMovieListsByIdAndType(id, type));
+//    }
 }

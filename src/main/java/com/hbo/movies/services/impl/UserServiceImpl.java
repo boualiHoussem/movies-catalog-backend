@@ -4,6 +4,7 @@ import com.hbo.movies.entities.Movie;
 import com.hbo.movies.entities.MovieList;
 import com.hbo.movies.entities.User;
 import com.hbo.movies.entities.UserMovie;
+import com.hbo.movies.repositories.MovieListRepository;
 import com.hbo.movies.repositories.UserRepository;
 import com.hbo.movies.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final MovieListRepository movieListRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
@@ -58,6 +60,11 @@ public class UserServiceImpl implements UserService {
                 });
         return result;
     }
+
+//    @Override
+//    public List<MovieList> findMovieListsByIdAndType(Long id, String type) {
+//        return movieListRepository.findByUserIdAndType(id, type);
+//    }
 
     @Override
     public List<MovieList> findMovieLists(Long id) {
